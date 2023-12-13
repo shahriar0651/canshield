@@ -84,7 +84,7 @@ python run_visualization_results.py
 ```
 
 ## Citation
-```
+```bibtex
 @article{shahriar2023canshield,
   title={CANShield: Deep-Learning-Based Intrusion Detection Framework for Controller Area Networks at the Signal Level}, 
   author={Shahriar, Md Hasan and Xiao, Yang and Moriano, Pablo and Lou, Wenjing and Hou, Y. Thomas},
