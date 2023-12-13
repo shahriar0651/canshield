@@ -15,13 +15,13 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforg
 chmod +x Mambaforge-$(uname)-$(uname -m).sh
 ./Mambaforge-$(uname)-$(uname -m).sh
 ```
-### Create Environement
+### Create Environment
 ```
-mamba env create --file dependancy/environment.yaml
+mamba env create --file dependency/environment.yaml
 ```
 Or update the existing env
 ```
-mamba env update --file dependancy/environment.yaml --prune
+mamba env update --file dependency/environment.yaml --prune
 ```
 
 ### Activate Environment
@@ -39,7 +39,7 @@ chmod +x download_syncan_dataset.sh
 ./download_syncan_dataset.sh
 ```
 
-Here are the tree file structure after downloading the synCAN dataset:
+Here is the tree file structure after downloading the synCAN dataset:
 ```
 datasets/
 └── can-ids/
@@ -68,14 +68,14 @@ python run_development_canshield.py
 
 # Evaluating CANShield
 
-### Testing on test dataset
+### Testing on the test dataset
 ```
 python run_evaluation_canshield.py
 ```
 
 # Visualizing Results
 
-### Visualize results on test dataset
+### Visualize results on the test dataset
 ```
 python run_visualization_results.py
 ```
@@ -83,10 +83,15 @@ python run_visualization_results.py
 # Citation
 ```
 @article{shahriar2023canshield,
-  title={CANShield: Deep Learning-Based Intrusion Detection Framework for Controller Area Networks at the Signal-Level},
-  author={Shahriar, Md Hasan and Xiao, Yang and Moriano, Pablo and Lou, Wenjing and Hou, Y Thomas},
-  journal={IEEE Internet of Things Journal},
+  title={CANShield: Deep-Learning-Based Intrusion Detection Framework for Controller Area Networks at the Signal Level}, 
+  author={Shahriar, Md Hasan and Xiao, Yang and Moriano, Pablo and Lou, Wenjing and Hou, Y. Thomas},
+  journal={IEEE Internet of Things Journal}, 
   year={2023},
-  publisher={IEEE}
+  volume={10},
+  number={24},
+  pages={22111-22127},
+  doi={10.1109/JIOT.2023.3303271}
 }
+
+
 ```
