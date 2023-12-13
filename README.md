@@ -1,14 +1,14 @@
-# CANShield
-CAN IDS
+# CANShield: 
+This repository provides a deep learning-based signal-level intrusion detection framework for the CAN bus. CANShield consists of three modules: 1) a data preprocessing module that handles the high-dimensional CAN data stream at the signal level and parses them into time series suitable for a deep learning model; 2) a data analyzer module consisting of multiple deep autoencoder (AE) networks, each analyzing the time-series data from a different temporal scale and granularity; and 3) finally an attack detection module that uses an ensemble method to make the final decision.
 
-# Clone CANShield
+## Clone CANShield
 
 ```
 git clone https://github.com/shahriar0651/canshield.git
 cd canshield
 ```
 
-# Install Mambaforge
+## Install Mambaforge
 ### Download and Install Mambaforge
 ```
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
@@ -29,7 +29,7 @@ mamba env update --file dependency/environment.yaml --prune
 mamba activate canshield
 ```
 
-# Download Dataset
+## Download Dataset
 
 ### Download SynCAN Dataset
 
@@ -59,28 +59,28 @@ datasets/
         └── README.md
 ```
 
-# Building CANShield
+## Building CANShield
 
 ### Training multiple autoencoders
 ```
 python run_development_canshield.py
 ```
 
-# Evaluating CANShield
+## Evaluating CANShield
 
 ### Testing on the test dataset
 ```
 python run_evaluation_canshield.py
 ```
 
-# Visualizing Results
+## Visualizing Results
 
 ### Visualize results on the test dataset
 ```
 python run_visualization_results.py
 ```
 
-# Citation
+## Citation
 ```
 @article{shahriar2023canshield,
   title={CANShield: Deep-Learning-Based Intrusion Detection Framework for Controller Area Networks at the Signal Level}, 
