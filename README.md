@@ -1,5 +1,8 @@
-# CANShield: 
+# CANShield
 This repository provides a deep learning-based signal-level intrusion detection framework for the CAN bus. CANShield consists of three modules: 1) a data preprocessing module that handles the high-dimensional CAN data stream at the signal level and parses them into time series suitable for a deep learning model; 2) a data analyzer module consisting of multiple deep autoencoder (AE) networks, each analyzing the time-series data from a different temporal scale and granularity; and 3) finally an attack detection module that uses an ensemble method to make the final decision.
+
+![CANShield Workflow](doc/canshield_workflow.jpg)
+
 
 ## Clone CANShield
 
