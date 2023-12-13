@@ -92,6 +92,4 @@ python run_visualization_results.py
   pages={22111-22127},
   doi={10.1109/JIOT.2023.3303271}
 }
-
-
 ```
