@@ -133,6 +133,8 @@ def load_data_create_images(args, file_name, file_path):
     
     X, y = load_data(dataset_name, file_name, file_path, features, org_columns, per_of_samples)
     X = scale_dataset(X, dataset_name, features, scaler_dir)
+    print("getting x seq")
     x_seq = create_x_sequences(X, time_step, window_step, num_signals, sampling_period)
+    print("getting y seq")
     y_seq = create_y_sequences(y, time_step, window_step, sampling_period)
     return x_seq, y_seq
