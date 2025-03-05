@@ -5,6 +5,8 @@ from keras.layers import LeakyReLU, MaxPooling2D, UpSampling2D
 from keras.layers import ZeroPadding2D, Cropping2D
 from keras.optimizers import Adam
 from keras.models import load_model
+from keras.losses import MeanSquaredError
+
 import glob
 from pathlib import Path
 
@@ -84,7 +86,7 @@ def get_autoencoder(args):
 
     # compile autoencoder
     opt = Adam(learning_rate = 0.0002, beta_1=0.5, beta_2=0.99)
-    autoencoder.compile(loss='mse', optimizer=opt, metrics=['accuracy']) #loss='binary_crossentropy'
+    autoencoder.compile(loss=MeanSquaredError(), optimizer=opt, metrics=['accuracy']) #loss='binary_crossentropy'
     autoencoder.summary()
 
     return autoencoder, retrain

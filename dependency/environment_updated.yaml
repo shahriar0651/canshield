@@ -1,0 +1,20 @@
+name: canshield
+channels:
+  - conda-forge
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - omegaconf=2.3.0=pyhd8ed1ab_0
+  - pandas=2.2.3=py310h6a678d5_0
+  - pip=25.0=py310h06a4308_0
+  - python=3.10.16=he870216_1
+  - seaborn=0.13.2=py310h06a4308_1
+  - tqdm=4.67.1=py310h2f386ee_0
+  - yaml=0.2.5=h7b6447c_0
+  - pip:
+      - keras==3.8.0
+      - numpy==2.0.2
+      - scikit-learn==1.6.1
+      - scipy==1.15.2
+      - tensorflow==2.18.0

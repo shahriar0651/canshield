@@ -26,9 +26,9 @@ def develop_canshield(args : DictConfig) -> None:
             # Train individual AE for each combination
             autoencoder, retrain = get_autoencoder(args)
 
-            if retrain == False:
-                print("Model already trained.")
-                return None
+            # if retrain == False:
+            #     print("Model already trained.")
+            #     return None
             
             file_dir_dict = get_list_of_files(args)
             for file_index, (file_name, file_path) in tqdm(enumerate(file_dir_dict.items())):
