@@ -18,13 +18,29 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforg
 chmod +x Mambaforge-$(uname)-$(uname -m).sh
 ./Mambaforge-$(uname)-$(uname -m).sh
 ```
+
 ### Create Environment
+
+We provide two environment configurations ([environment_v1](dependency/environment_v1.yaml) & [environment_v2](dependency/environment_v2.yaml)) which are optimized for different compuation setup. Create `canshield` environment using anyone of these (or customize as needed).
+
+**Environment Comparison Table**  
+
+| **Component**     | **Environment V1**            | **Environment V2**            |  
+|------------------|----------------------------|----------------------------|  
+| **Python**       | 3.9                        | 3.9                        |  
+| **TensorFlow**   | 2.10                       | 2.15                       |  
+| **Keras**        | 2.10                       | 2.15                       |  
+| **CUDA**        | 11.7                        | 12.8                        |  
+| **cuDNN**        | 8.5.0.96                    | 8.9.6.50                    |  
+| **NumPy**        | 1.26.4                      | 1.26.4                      |  
+| **GPU Tested**   | RTX 2080 Ti                 | Tesla P40                   |  
+
 ```
-conda env create --file dependency/environment.yaml
+conda env create --file dependency/environment_v1.yaml
 ```
 Or update the existing env
 ```
-conda env update --file dependency/environment.yaml --prune
+conda env update --file dependency/environment_v1.yaml --prune
 ```
 
 ### Activate Environment

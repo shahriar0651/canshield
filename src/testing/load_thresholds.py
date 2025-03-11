@@ -361,6 +361,6 @@ def generate_remaining_threshold_data(args, loss_dict, file_dir_dict):
                                 
                 for signal_th, signal_node in time_node.child_list.items():
                     if signal_node.th_exist == False:
-                        print("Sinal node doesn't exits..") 
+                        print("Signal node doesn't exits..") 
                         y_train_prob_org_dict = generate_and_save_prediction_loss(args, file_dir_dict, y_train_prob_org_dict)
                         signal_node = generate_and_save_signal_data(signal_node, file_dir_dict, loss_node.th_data, time_node.th_data, y_train_prob_org_dict, signal_factors)

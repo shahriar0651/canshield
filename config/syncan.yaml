@@ -30,9 +30,12 @@ features : ['Sig_1_of_ID_2',
 num_signals: 20
 per_of_samples: 1.00 # <= 1.00, 1.00 means evaluation on 100% of data points
 max_epoch: 500
-time_steps: [25, 50, 75, 100]
+time_steps: [50] #[25, 50, 75, 100]
 sampling_periods: [1, 5, 10, 20, 50]
-window_step : 10 # Can be set to higher value to speed up the valuation
+window_step : 1 #000 #25 #10 # Can be set to higher value to speed up the valuation
+window_steps_train: 10 #000 #25 #10 # Can be set to higher value to speed up the valuation
+window_step_valid : 25 #000 #25 #10 # Can be set to higher value to speed up the valuation
+window_step_test : 1 #000 #25 #10 # Can be set to higher value to speed up the valuation
 
 time_step: 50 # Dummy value, will be assigned dynamically
 sampling_period : 1 # Dummy value, will be assigned dynamically
@@ -49,8 +52,10 @@ signal_factors : [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 99.5, 99.99]
 loss_factor : 95 # Dummy value, will be assigned dynamically
 time_factor : 99 # Dummy value, will be assigned dynamically
 
-attacks_dict : {'Flooding': 'test_flooding',
+attacks_dict : {
+        'Flooding': 'test_flooding',
         'Suppress': 'test_suppress',
         'Plateau': 'test_plateau',
         'Continuous': 'test_continuous',
-        'Playback': 'test_playback'}
+        'Playback': 'test_playback',
+        }

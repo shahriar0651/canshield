@@ -1,3 +1,10 @@
+# ================== Environement V1 ===============
+# Tested with 
+# Graphics Card: RTX 2080Ti
+# NVIDIA-SMI 515.43.04
+# Driver Version: 515.43.04  
+# CUDA Version: 11.7
+
 name: canshield
 channels:
   - conda-forge
@@ -20,6 +27,3 @@ dependencies:
       - nvidia-cuda-runtime-cu11==11.7.99
       - nvidia-cudnn-cu11==8.5.0.96
       - numpy==1.26.4
-
-# Tested with 
-# | NVIDIA-SMI 515.43.04    Driver Version: 515.43.04    CUDA Version: 11.7 |

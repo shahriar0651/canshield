@@ -22,6 +22,8 @@ def develop_canshield(args : DictConfig) -> None:
             # Sep-up variable to define the AE model
             args.time_step = time_step
             args.sampling_period = sampling_period
+            args.window_step = args.window_step_train
+            print(f"Starting thresholding with args.window_step: {args.window_step}")
 
             # Train individual AE for each combination
             autoencoder, retrain = get_autoencoder(args)
