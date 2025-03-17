@@ -15,6 +15,11 @@ from sklearn.metrics import roc_auc_score, roc_curve, auc
 from os.path import exists as file_exists  
 from sklearn.metrics import confusion_matrix
 
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+from sklearn.metrics import auc
+
 def get_conf_matric(y_true, y_pred):
     try:
         CM = confusion_matrix(y_true, y_pred, normalize = 'true')
@@ -33,22 +38,35 @@ def get_conf_matric(y_true, y_pred):
 
 
 def plot_auroc_curve(args, fprs, tprs, fig_name):
-    #create ROC curve
+    # Create ROC curve
     root_dir = args.root_dir
-    dataset_name =args.dataset_name
+    dataset_name = args.dataset_name
     auc_score = auc(fprs, tprs)
-    fig, ax = plt.subplots(1, 1, figsize = (5,4))
-    ax.plot(fprs,tprs)
-    ax.set_ylabel('True Positive Rate')
+    attack_name = fig_name.split("_")[-1]
+    fig, ax = plt.subplots(figsize=(3.5, 2.5))
+
+    # Plot AUROC curve
+    ax.plot(fprs, tprs, label=f"AUROC = {auc_score:.3f}", color='blue', linewidth=2)
+
+    # Plot random baseline
+    ax.plot([0, 1], [0, 1], linestyle='--', color='gray', label="Random Baseline")
+
+    # Labels and title
     ax.set_xlabel('False Positive Rate')
-    ax.set_title(f"{fig_name}, AUROC : {auc_score}")
+    ax.set_ylabel('True Positive Rate')
+    ax.set_title(f"{attack_name} Attack")
+    ax.legend(loc="lower right")
+    ax.grid(True, linestyle="--", alpha=0.6, linewidth=0.5)
+
     plt.tight_layout()
+
+    # Save figure
     fig_dir = Path(f"{root_dir}/../plots/{dataset_name}/auroc_curves/{fig_name}")
     fig_dir.parent.mkdir(exist_ok=True, parents=True)
-    plt.savefig(f"{fig_dir}.jpg", dpi = 250)
-    plt.savefig(f"{fig_dir}.pdf", dpi = 250)
-    # plt.savefig(f"{root_dir}/../plots/{dataset_name}/auroc_curves/auroc_curve_{fig_name}.pdf")
-    # plt.show()
+    plt.savefig(f"{fig_dir}.jpg", dpi=250)
+    plt.savefig(f"{fig_dir}.pdf", dpi=250)
+    plt.close(fig)
+
 
 def get_canshield_confusion_mat(args, heatmap_auc_dict, prediction_df_final):
     sampling_periods = args.sampling_periods
@@ -133,7 +151,7 @@ def get_canshield_confusion_mat(args, heatmap_auc_dict, prediction_df_final):
         tpr, fpr = get_conf_matric(y_true, y_pred)
         canshield_cm["CANShield-Ens"][f'{file_name}_tpr'] = tpr
         canshield_cm["CANShield-Ens"][f'{file_name}_fpr'] = fpr
-        plot_auroc_curve(args, fprs, tprs, f"CANShield-Ens_{dataset_name}_{sampling_period}_{file_name}")
+        plot_auroc_curve(args, fprs, tprs, f"CANShield-Ens_{dataset_name}_{file_name}")
 
 
     canshield_cm_df = np.round(pd.DataFrame(canshield_cm).T,3)
