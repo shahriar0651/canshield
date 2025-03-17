@@ -1,0 +1,31 @@
+
+# ================== Environement V2 ===============
+# Tested with 
+# Graphics Card: Tesla P40
+# NVIDIA-SMI 570.86.15
+# Driver Version: 570.86.15      
+# CUDA Version: 12.8
+
+name: canshield
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - omegaconf
+  - pandas
+  - seaborn
+  - tqdm
+  - yaml
+  - hydra-core
+  - scikit-learn
+  - scipy
+  - pip:
+      - tensorflow==2.15  # Updated for CUDA 12.8 support
+      - keras==2.15       # Ensure compatibility with TensorFlow version
+      - nvidia-pyindex
+      - nvidia-cuda-runtime-cu12==12.8.57  # Corrected version
+      - nvidia-cudnn-cu12==8.9.6.50
+      - numpy==1.26.4
+

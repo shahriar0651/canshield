@@ -1,0 +1,29 @@
+# ================== Environement V1 ===============
+# Tested with 
+# Graphics Card: RTX 2080Ti
+# NVIDIA-SMI 515.43.04
+# Driver Version: 515.43.04  
+# CUDA Version: 11.7
+
+name: canshield
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - omegaconf
+  - pandas
+  - seaborn
+  - tqdm
+  - yaml
+  - hydra-core
+  - scikit-learn
+  - scipy
+  - pip:
+      - tensorflow==2.10  # Install GPU version of TensorFlow
+      - keras==2.10          # Ensure compatibility with TensorFlow GPU version
+      - nvidia-pyindex
+      - nvidia-cuda-runtime-cu11==11.7.99
+      - nvidia-cudnn-cu11==8.5.0.96
+      - numpy==1.26.4

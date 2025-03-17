@@ -1,0 +1,11 @@
+*.out
+*/*.out
+__pycache__/*
+*/__pycache__/*
+*/*/__pycache__/*
+*/*/*/__pycache__/*
+*/outputs/*
+artifacts/*
+src/logs/*
+data*/*
+plots*/*
