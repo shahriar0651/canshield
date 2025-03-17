@@ -177,20 +177,13 @@ The results of this scaled-down evaluation can be found below:
 | Autoencoder   | 0.688 / 0.005   | 0.001 / 0.007  | 0.361 / 0.074 | 0.016 / 0.025  | 0.029 / 0.005  |
 
 
-<img src="doc/CANShield-Ens_syncan_Flooding.jpg" alt="CANShield Workflow" width="25%">
-<img src="doc/CANShield-Ens_syncan_Suppress.jpg" alt="CANShield Workflow" width="25%">
-<img src="doc/CANShield-Ens_syncan_Plateau.jpg" alt="CANShield Workflow" width="25%">
-<img src="doc/CANShield-Ens_syncan_Continuous.jpg" alt="CANShield Workflow" width="25%">
-<img src="doc/CANShield-Ens_syncan_Playback.jpg" alt="CANShield Workflow" width="25%">
+<img src="doc/CANShield-Ens_syncan_Flooding.jpg" alt="CANShield Workflow" width="25%"><img src="doc/CANShield-Ens_syncan_Suppress.jpg" alt="CANShield Workflow" width="25%"><img src="doc/CANShield-Ens_syncan_Plateau.jpg" alt="CANShield Workflow" width="25%"><img src="doc/CANShield-Ens_syncan_Continuous.jpg" alt="CANShield Workflow" width="25%"><img src="doc/CANShield-Ens_syncan_Playback.jpg" alt="CANShield Workflow" width="25%">
 
 ### Acknowledgements
 
 We would like to thank the authors and contributors of the following open-source models and libraries, which were instrumental in this work:
 
 - **[SynCAN Dataset](https://github.com/etas/SynCAN)**
-- **[SynCAN Dataset](https://github.com/etas/SynCAN)**
-- **[SynCAN Dataset](https://github.com/etas/SynCAN)**
-
 
 
 ## Citation
