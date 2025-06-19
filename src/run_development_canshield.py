@@ -33,10 +33,11 @@ def develop_canshield(args : DictConfig) -> None:
             #     return None
             
             file_dir_dict = get_list_of_files(args)
+            print("file_dir_dict: ", file_dir_dict)
+            assert len(file_dir_dict) > 0, "No files found in the specified directory."
             for file_index, (file_name, file_path) in tqdm(enumerate(file_dir_dict.items())):
-                
                 try:
-                    print("Starting loadin ", file_index, file_name)
+                    print("Starting loading", file_index, file_name)
                     x_train_seq, _ = load_data_create_images(args, file_name, file_path)
                 
                     print("Starting trainin with", file_name)

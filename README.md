@@ -7,8 +7,8 @@ This is a official implementation of [CANShield](https://arxiv.org/abs/2205.0130
 ## Clone CANShield
 
 ```
-git clone https://github.com/shahriar0651/canshield.git
-cd canshield
+git clone https://github.com/shahriar0651/CANShield.git
+cd CANShield
 ```
 
 ## Install Mambaforge

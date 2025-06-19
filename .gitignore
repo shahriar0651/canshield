@@ -9,3 +9,5 @@ artifacts/*
 src/logs/*
 data*/*
 plots*/*
+TODO.md
+*.log

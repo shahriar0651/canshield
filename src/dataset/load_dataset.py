@@ -63,6 +63,7 @@ def get_list_of_files(args): #data_type: str, clean_data_dir: str):
 
     file_dir_dict = {}
     file_paths = glob.glob(f"{data_dir}/*.csv")
+    print(f"Found {len(file_paths)} files in {data_dir} for {data_type} data.")
     for file_path in file_paths:
         file_name = file_path.split("/")[-1].split(".")[0]
         file_dir_dict[file_name] = file_path

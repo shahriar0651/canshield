@@ -23,15 +23,12 @@ from sklearn.metrics import auc
 def get_conf_matric(y_true, y_pred):
     try:
         CM = confusion_matrix(y_true, y_pred, normalize = 'true')
-        print("CM: ", CM)
         TN = CM[0][0]
         FN = CM[1][0]
         TP = CM[1][1]
         FP = CM[0][1]
-        # print(CM)
         FPR = FP/(FP+TN)
         TPR = TP/(TP+FN)
-        # print(TPR, FPR)
         return TPR, FPR
     except:
         return 0.00, 0.00
